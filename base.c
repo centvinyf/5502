@@ -465,7 +465,7 @@ void osPhysicalDiskWrite(SYSTEM_CALL_DATA* SystemCallData){
 
 void osTerminateProcess(SYSTEM_CALL_DATA* SystemCallData){
     MEMORY_MAPPED_IO mmio;
-    if(SystemCallData->Argument[0]==-1){
+    if((long)SystemCallData->Argument[0]==-1){
         current_PCB->state=TERMINATED;
         if(get_length_of_list(ready_queue)>0)
             dispatcher();
@@ -480,7 +480,7 @@ void osTerminateProcess(SYSTEM_CALL_DATA* SystemCallData){
             
             
     }
-    else if(SystemCallData->Argument[0]==-2){
+    else if((long)SystemCallData->Argument[0]==-2){
         *(SystemCallData->Argument[1])=ERR_SUCCESS;
         mmio.Mode = Z502Action;
         mmio.Field1 = mmio.Field2 = mmio.Field3 = 0;
