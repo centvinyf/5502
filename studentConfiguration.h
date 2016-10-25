@@ -10,9 +10,9 @@
 /****************************************************************************
     Choose one of the operating systems below
 ****************************************************************************/
-//#define         NT
-//#define         LINUX
-#define         MAC
+//define         NT
+#define         LINUX
+//#define         MAC
 
 /*****************************************************************
     The next five defines have special meaning.  They allow the
@@ -59,8 +59,8 @@ typedef struct  {
 //}myDISK ;
 typedef struct {
     char *name;
-    INT32 pid;
-    INT32 state;
+    int pid;
+    int state;
     MEMORY_MAPPED_IO2 context;
     long delay;
     
