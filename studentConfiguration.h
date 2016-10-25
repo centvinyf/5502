@@ -41,11 +41,6 @@
 #include "stdlib.h"
 #include "global.h"
 
-typedef         int                             INT32;
-typedef         unsigned int                   UINT32;
-typedef         short                           INT16;
-typedef         unsigned short                  UINT16;
-typedef         int                             BOOL;
 
 typedef struct  {
     int          Mode;
