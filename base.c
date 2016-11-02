@@ -699,7 +699,14 @@ void osInit(int argc, char *argv[]) {
         osCreateProcess(SystemCallData2);
         
     }
-
+    else if(argc>1 &&(strcmp(argv[1], "test21") == 0)){
+        SystemCallData2->NumberOfArguments=6;
+        SystemCallData2->Argument[0] = "test21";
+        SystemCallData2->Argument[1] = (long)test21;
+        SystemCallData2->Argument[2] = (long)ROOT_PCB_PRIO;
+        osCreateProcess(SystemCallData2);
+        
+    }
 	//  By default test0 runs if no arguments are given on the command line
 	//  Creation and Switching of contexts should be done in a separate routine.
 	//  This should be done by a "OsMakeProcess" routine, so that
